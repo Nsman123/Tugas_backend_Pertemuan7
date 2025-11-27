@@ -1,30 +1,30 @@
-// movie-app/routes/movie.js (Perbaikan dan Pembersihan)
+// movie-app/routes/movie.js 
 
 const express = require("express");
 // create movie router
 const movieRouter = express.Router();
 
-// Perbaikan 1: Import MovieController yang sebenarnya (asumsi letaknya di ../controllers/MovieController)
+
 const MovieController = require("../controllers/MovieController");
 
-// Definisikan Rute Movie menggunakan MovieController methods
-// Rute duplikat lama telah dihapus untuk menghindari penimpaan
 
-// GET /movies - Mendapatkan semua film (index)
+
+// GET /movies 
 movieRouter.get("/", MovieController.index);
 
-// POST /movies - Menambah film baru (store)
+// POST /movies 
 movieRouter.post("/", MovieController.store);
 
-// GET /movies/:id - Mendapatkan film berdasarkan ID (show)
+// GET /movies/:id 
 movieRouter.get("/:id", MovieController.show);
 
-// PUT /movies/:id - Memperbarui film berdasarkan ID (update)
+// PUT /movies/:id 
 movieRouter.put("/:id", MovieController.update);
 
-// DELETE /movies/:id - Menghapus film berdasarkan ID (destroy)
+// DELETE /movies/:id 
 movieRouter.delete("/:id", MovieController.destroy);
 
 
 // export movie router
+
 module.exports = movieRouter;
